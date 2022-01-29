@@ -177,7 +177,7 @@ def sudo(client, message,redis):
 	if text and (type is "private" or (type is "supergroup" or type is "group")) :
 		if rank == "sudo":
 
-			if text == "تفعيل الاذاعه" :
+			if text == "تفعيل الاذاعة" :
 				R = text.split(" ")[1]
 				get = redis.get("{}Nbot:bodas".format(BOT_ID))
 				BY = "<a href=\"tg://user?id={}\">{}</a>".format(userID,userFN)
@@ -188,7 +188,7 @@ def sudo(client, message,redis):
 				else:
 					Bot("sendMessage",{"chat_id":chatID,"text":r.ADDed.format(BY,R),"reply_to_message_id":message.message_id,"parse_mode":"html","disable_web_page_preview":True})
 
-			if text == "تعطيل الاذاعه" :
+			if text == "تعطيل الاذاعة" :
 				R = text.split(" ")[1]
 				BY = "<a href=\"tg://user?id={}\">{}</a>".format(userID,userFN)
 				get = redis.get("{}Nbot:bodas".format(BOT_ID))
