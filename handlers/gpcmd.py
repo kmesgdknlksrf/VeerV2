@@ -530,7 +530,7 @@ def gpcmd(client, message,redis):
 {msgs} - لعرض عدد الرسائل
 {edits} - لعرض عدد التعديلات
 {rate} - لعرض نسبه التفاعل
-⎯ ⎯ ⎯ ⎯""")
+≪━━━━●مسلم●━━━━≫""")
       if re.search("^اضف رد$",text):
         message.reply_text(  
 """⚠️꒐ يمكنك اضف رد  بأرسال
@@ -549,7 +549,7 @@ __italic__
 
 <code>inline fixed-width code</code>
 `inline fixed-width code`
-⎯ ⎯ ⎯ ⎯""",parse_mode="markdown",disable_web_page_preview=True)
+≪━━━━●مسلم●━━━━≫""",parse_mode="markdown",disable_web_page_preview=True)
       if re.search(c.setIDC, text):
           # print("ssssssssss")
           # tx = text.replace(c.RsetIDC,"")
