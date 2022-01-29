@@ -441,7 +441,7 @@ def gpcmd(client, message,redis):
             redis.srem("{}Nbot:{}:TXoeders".format(BOT_ID,chatID),x1)
             message.reply_text(f"✅꒐ تم حذف الامر {cc}")
             return 0
-        message.reply_text(f"⚠️꒐ لا يوجد {cc} امر")
+        message.reply_text(f"🚫 لا يوجد {cc} امر")
       if re.search("^اضف امر (?!عام)\w*$",text):
         cc = re.findall(c.addor,text)
         redis.hset("{}Nbot:step:or".format(BOT_ID),userID,cc[0])
@@ -520,7 +520,7 @@ def gpcmd(client, message,redis):
         redis.hdel("{}Nbot:SHOWid".format(BOT_ID),chatID)
         Bot("sendMessage",{"chat_id":chatID,"text":r.Ddelid,"reply_to_message_id":message.message_id,"parse_mode":"html"})
       if re.search("^تعين ايدي$|^وضع ايدي$",text):
-        message.reply_text("""⚠️꒐ يمكنك تغير الايدي بأرسال
+        message.reply_text("""🚫 يمكنك تغير الايدي بأرسال
 ⏺꒐ `تعين الايدي النص`
 
 🔽꒐ ويمكنك ايضاً اضافة
@@ -533,7 +533,7 @@ def gpcmd(client, message,redis):
 ≪━━━━●مسلم●━━━━≫""")
       if re.search("^اضف رد$",text):
         message.reply_text(  
-"""⚠️꒐ يمكنك اضف رد  بأرسال
+"""🚫 يمكنك اضف رد  بأرسال
 ⏺꒐ `اضف رد النص`
 
 🔽꒐ ويمكنك ايضاً اضافة html
