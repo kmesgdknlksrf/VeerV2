@@ -114,7 +114,7 @@ def sudo(client, message,redis):
 					redis.srem("{}Nbot:{}:TXPoeders".format(BOT_ID,chatID),x1)
 					message.reply_text(f"✅꒐ تم حذف الامر {cc} من الاوامر العامة")
 					return 0
-			message.reply_text(f"⚠️꒐ لا يوجد {cc} امر")
+			message.reply_text(f"🚫 لا يوجد {cc} امر")
 		if re.search(c.leaveChatS, text) and redis.get("{}Nbot:leaveaddbot".format(BOT_ID)) :
 			Bot("leaveChat",{"chat_id":chatID})
 			redis.srem("{}Nbot:groups".format(BOT_ID),chatID)
