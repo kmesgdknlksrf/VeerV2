@@ -67,7 +67,7 @@ def updateHandlers(client, message,redis):
 					get = (redis.hget("{}Nbot:links".format(BOT_ID),chatID) or GetLink(chatID) or "https://t.me/"+yousef_labban1)
 					kb = InlineKeyboardMarkup([[InlineKeyboardButton("الرابط 🖇", url=get)]])
 					BY = "<a href=\"tg://user?id={}\">{}</a>".format(userID,message.from_user.first_name)
-					Bot("sendMessage",{"chat_id":sendTO,"text":f"تم تفعيل مجموعة جديدة ℹ️\nاسم المجموعة : {title}\nايدي المجموعة : {chatID}\nالمنشئ : {BY}\n⎯ ⎯ ⎯ ⎯","parse_mode":"html","reply_markup":kb})
+					Bot("sendMessage",{"chat_id":sendTO,"text":f"تم تفعيل مجموعة جديدة ℹ️\nاسم المجموعة : {title}\nايدي المجموعة : {chatID}\nالمنشئ : {BY}\n≪━━━━●مسلم●━━━━≫","parse_mode":"html","reply_markup":kb})
 				elif text == c.add and redis.sismember("{}Nbot:disabledgroups".format(BOT_ID),chatID)  and Ckuser(message):
 					redis.sadd("{}Nbot:groups".format(BOT_ID),chatID)
 					redis.srem("{}Nbot:disabledgroups".format(BOT_ID),chatID)
