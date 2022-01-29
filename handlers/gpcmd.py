@@ -259,7 +259,7 @@ def gpcmd(client, message,redis):
         Getrank = isrank(redis,userId,chatID)
         BY = "<a href=\"tg://user?id={}\">{}</a>".format(userId,userFn)
         if Getrank == "bot":return False
-        tx = f"🚹꒐ العضو : {BY}\n"
+        tx = f"🚹꒐ المستخدم : {BY}\n"
         if redis.sismember("{}Nbot:{}:bans".format(BOT_ID,chatID),userId):
           tx += "الحظر 🚫: محظور\n"
         else:
@@ -291,7 +291,7 @@ def gpcmd(client, message,redis):
         if Getrank == "bot":return False
         print(GetGprank)
         if GetGprank == "member" and not redis.sismember("{}Nbot:{}:bans".format(BOT_ID,chatID),userId) and not redis.sismember("{}Nbot:{}:restricteds".format(BOT_ID,chatID),userId):
-          Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ العضو : {BY}\n⚪️꒐ لا توجد عليه قيود","reply_to_message_id":message.message_id,"parse_mode":"html"})
+          Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ المستخدم : {BY}\n⚪️꒐ لا توجد عليه قيود","reply_to_message_id":message.message_id,"parse_mode":"html"})
         
         if GetGprank == "NoMember":
           Bot("sendMessage",{"chat_id":chatID,"text":r.NoMember,"reply_to_message_id":message.message_id,"parse_mode":"html"})
@@ -302,7 +302,7 @@ def gpcmd(client, message,redis):
           Bot("restrictChatMember",{"chat_id": chatID,"user_id": userId,"can_send_messages": 1,"can_send_media_messages": 1,"can_send_other_messages": 1,"can_send_polls": 1,
           "can_change_info": 1,"can_add_web_page_previews": 1,"can_pin_messages": 1,"can_invite_users": 1,})
           redis.srem("{}Nbot:{}:restricteds".format(BOT_ID,chatID),userId)
-          Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ العضو : {BY}\n⚪️꒐ تم الغاء القيود","reply_to_message_id":message.message_id,"parse_mode":"html"})
+          Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ المستخدم : {BY}\n⚪️꒐ تم الغاء القيود","reply_to_message_id":message.message_id,"parse_mode":"html"})
 
       except Exception as e:
         Bot("sendMessage",{"chat_id":chatID,"text":r.userNocc,"reply_to_message_id":message.message_id,"parse_mode":"html"})
@@ -328,10 +328,10 @@ def gpcmd(client, message,redis):
         if (Getrank is False or Getrank is 0):
           BY = "<a href=\"tg://user?id={}\">{}</a>".format(userId,userFn)
           if not redis.sismember(f"{BOT_ID}Nbot:{chatID}:muteusers",userId):
-            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ العضو : {BY}\n🚷꒐ غير مكتوم من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
+            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ المستخدم : {BY}\n🚷꒐ غير مكتوم من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
           else:
             redis.srem(f"{BOT_ID}Nbot:{chatID}:muteusers",userId)
-            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ العضو : {BY}\n🚷꒐ تم الغاء كتمه من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
+            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ المستخدم : {BY}\n🚷꒐ تم الغاء كتمه من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
         else:
           Bot("sendMessage",{"chat_id":chatID,"text":r.haveRank.format(Grank((Getrank or GetGprank),r)),"reply_to_message_id":message.message_id,"parse_mode":"html"})
       except Exception as e:
@@ -356,10 +356,10 @@ def gpcmd(client, message,redis):
         if (Getrank is False or Getrank is 0):
           BY = "<a href=\"tg://user?id={}\">{}</a>".format(userId,userFn)
           if redis.sismember(f"{BOT_ID}Nbot:{chatID}:muteusers",userId):
-            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ العضو : {BY}\n🚷꒐ بالفعل مكتوم من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
+            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ المستخدم : {BY}\n🚷꒐ بالفعل مكتوم من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
           else:
             redis.sadd(f"{BOT_ID}Nbot:{chatID}:muteusers",userId)
-            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ العضو : {BY}\n🚷꒐ تم كتمه من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
+            Bot("sendMessage",{"chat_id":chatID,"text":f"🚹꒐ المستخدم : {BY}\n🚷꒐ تم كتمه من المجموعة","reply_to_message_id":message.message_id,"parse_mode":"html"})
         else:
           Bot("sendMessage",{"chat_id":chatID,"text":r.haveRank.format(Grank((Getrank or GetGprank),r)),"reply_to_message_id":message.message_id,"parse_mode":"html"})
       except Exception as e:
