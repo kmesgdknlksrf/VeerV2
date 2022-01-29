@@ -151,7 +151,7 @@ def updateHandlers(client, message,redis):
 			userFN = message.from_user.first_name
 			redis.sadd("{}Nbot:privates".format(BOT_ID),userID)
 			if rank == "sudo":
-				kb = ReplyKeyboardMarkup([[r.RKgp, r.RKgpl],[r.RKaf, r.RKrf],[r.RKf],["جلب نسخة احتياطية"],[r.RKub]],resize_keyboard=True)
+				kb = ReplyKeyboardMarkup([[r.RKgp, r.RKgpl],[r.RKaf, r.RKrf],[r.RKf],[r.RKmm],["جلب نسخة احتياطية"],[r.RKub]],resize_keyboard=True)
 				Bot("sendMessage",{"chat_id":chatID,"text":r.sudostart,"reply_to_message_id":message.message_id,"parse_mode":"html","reply_markup":kb})
 				return 0
 			getbot = client.get_me()
