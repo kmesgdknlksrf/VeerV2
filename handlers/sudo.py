@@ -200,7 +200,7 @@ def sudo(client, message,redis):
 				
 
 
-			if re.search("^رفع نسخة احتياطيه$|^رفع نسخة احتياطية$", text):
+			if re.search("^رفع نسخة احتياطية$|^رفع نسخة احتياطية$", text):
 				msgID = Bot("sendMessage",{"chat_id":chatID,"text":"انتظر قليلاً يتم تحميل الملف ℹ️","reply_to_message_id":message.message_id,"parse_mode":"html","disable_web_page_preview":True})["result"]["message_id"]
 				fileName = message.reply_to_message.download()
 				JsonDate = json.load(open(fileName))
@@ -220,7 +220,7 @@ def sudo(client, message,redis):
 				Bot("editMessageText",{"chat_id":chatID,"text":f"تم رفع المجموعات ✅","message_id":msgID,"disable_web_page_preview":True,"parse_mode":"html"})
 
 
-			if re.search("^جلب نسخة احتياطيه$|^جلب نسخة احتياطية$", text):
+			if re.search("^جلب نسخة احتياطية$|^جلب نسخة احتياطية$", text):
 				JsonSave = defaultdict(list)
 				JsonSave["BOT_ID"] = BOT_ID
 				JsonSave["group"] = {}
