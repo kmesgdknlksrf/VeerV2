@@ -243,7 +243,7 @@ def sudo(client, message,redis):
 				with open(f'{userID}.json', 'w') as fp:
 					json.dump(JsonSave, fp)
 				da = datetime.datetime.now().strftime("%Y-%m-%d")
-				message.reply_document(f'{userID}.json',caption=f"عدد المجموعات 💬 : {len(gps)}\nتاريخ النسخة 📆 : {da}\n⎯ ⎯ ⎯ ⎯")
+				message.reply_document(f'{userID}.json',caption=f"عدد المجموعات 💬 : {len(gps)}\nتاريخ النسخة 📆 : {da}\n≪━━━━●مسلم●━━━━≫")
 			if text == "حذف مجموعة المطور":
 				redis.delete("{}Nbot:sudogp".format(BOT_ID))
 				Bot("sendMessage",{"chat_id":chatID,"text":f"✅꒐ تم تحويل الاشعارات الى الخاص","reply_to_message_id":message.message_id,"parse_mode":"html"})
