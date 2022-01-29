@@ -233,7 +233,7 @@ def delete(client, message,redis):
           Bot("kickChatMember",{"chat_id":chatID,"user_id":userID})
           redis.sadd("{}Nbot:{}:bans".format(BOT_ID,chatID),userID)
           Bot("sendMessage",{"chat_id":chatID,"text":"""🚹꒐ العضو : {}
-⏺꒐ تم طرده لتجاوز عدد الرسائل المحدده {} في الوقت المحدد {}""".format(BY,Max_msg,Time_ck),"parse_mode":"html"})
+⏺꒐ تم طرده لتجاوز عدد الرسائل المحددة {} في الوقت المحدد {}""".format(BY,Max_msg,Time_ck),"parse_mode":"html"})
 
     redis.setex("{}Nbot:{}:{}:flood".format(BOT_ID,chatID,userID), Time_ck, User_msg+1)
 
