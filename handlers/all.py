@@ -50,7 +50,7 @@ def allGP(client, message,redis):
         Bot("sendMessage",{"chat_id":chatID,"text":r.userNocc,"reply_to_message_id":message.message_id,"parse_mode":"html"})
 
     if re.search(c.sors,text):
-      kb = InlineKeyboardMarkup([[InlineKeyboardButton("قناة السورس 📢", url="t.me/"+yousef_labban1)],[InlineKeyboardButton("تواصل السورس 💬", url="t.me/yousef_labban")],[InlineKeyboardButton("قناة البوتات 🤖", url="t.me/yousef_labban1")]])
+      kb = InlineKeyboardMarkup([[InlineKeyboardButton("⌯ 𝙍𝙀𝘽𝙊𝙍𝙏𝙀𝙍 ⌯", url="t.me/"+ttccss)],[InlineKeyboardButton("𝙏𝙒 𝙍𝙀𝘽𝙊𝙍𝙏𝙀𝙍", url="t.me/ttccss")],[InlineKeyboardButton("قناة البوتات 🤖", url="t.me/ttccss1")]])
       Botuser = client.get_me().username
       Bot("sendMessage",{"chat_id":chatID,"text":r.sors.format("@"+Botuser),"disable_web_page_preview":True,"reply_to_message_id":message.message_id,"parse_mode":"markdown","reply_markup":kb})
     
@@ -63,7 +63,7 @@ def allGP(client, message,redis):
       reply_markup = getOR(rank,r,userID)
       Bot("sendMessage",{"chat_id":chatID,"text":r.Showall,"reply_to_message_id":message.message_id,"parse_mode":"html","disable_web_page_preview":True,"reply_markup":reply_markup})
 
-    if text == "عدد القروب" and (rank is not False or rank is not  0 ):
+    if text == "عدد الجروب" and (rank is not False or rank is not  0 ):
       from pyrogram.raw.functions.channels import GetFullChannel
       chat = client.resolve_peer(chatID)
       full_chat = client.send(GetFullChannel(channel=chat)).full_chat
@@ -114,7 +114,7 @@ def allGP(client, message,redis):
 
     if text == "رتبتي":
       t = IDrank(redis,userID,chatID,r)
-      Bot("sendMessage",{"chat_id":chatID,"text":f"⏏️꒐ موقعك : {t}","reply_to_message_id":message.message_id,"parse_mode":"html"})
+      Bot("sendMessage",{"chat_id":chatID,"text":f"⏏️꒐ رتبك في البوت هي :/n {t}","reply_to_message_id":message.message_id,"parse_mode":"html"})
     if text == c.ID and not redis.sismember("{}Nbot:IDSend".format(BOT_ID),chatID) and message.reply_to_message:
       us = message.reply_to_message.from_user.id
       rusername = message.reply_to_message.from_user.username

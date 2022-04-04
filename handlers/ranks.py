@@ -37,7 +37,7 @@ def ranks(client, message,redis):
 					redis.sadd("{}Nbot:{}:TXoeders".format(BOT_ID,chatID),ad)
 				orders += f"{i} - {text} > {tx}\n"
 				i+=1
-			Bot("sendMessage",{"chat_id":chatID,"text":f"✅꒐ تم اضافة الاوامر الاتيه \n≪━━━━●مسلم●━━━━≫\n{orders}\n≪━━━━●مسلم●━━━━≫","reply_to_message_id":message.message_id,"disable_web_page_preview":True})
+			Bot("sendMessage",{"chat_id":chatID,"text":f"✅꒐ تم اضافة الاوامر الاتيه \nꔹ━━ꔹ𝙍𝙀𝘽𝙊𝙍𝙏𝙀𝙍ꔹ━━ꔹ\n{orders}\nꔹ━━ꔹ𝙍𝙀𝘽𝙊𝙍𝙏𝙀𝙍ꔹ━━ꔹ","reply_to_message_id":message.message_id,"disable_web_page_preview":True})
 
 		if re.search(c.del_ac, text) and Ckuser(message):
 			H = "acreator"

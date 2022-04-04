@@ -243,7 +243,7 @@ def sudo(client, message,redis):
 				with open(f'{userID}.json', 'w') as fp:
 					json.dump(JsonSave, fp)
 				da = datetime.datetime.now().strftime("%Y-%m-%d")
-				message.reply_document(f'{userID}.json',caption=f"عدد المجموعات 💬 : {len(gps)}\nتاريخ النسخة 📆 : {da}\n≪━━━━●مسلم●━━━━≫")
+				message.reply_document(f'{userID}.json',caption=f"عدد المجموعات 💬 : {len(gps)}\nتاريخ النسخة 📆 : {da}\nꔹ━━ꔹ𝙍𝙀𝘽𝙊𝙍𝙏𝙀𝙍ꔹ━━ꔹ")
 			if text == "حذف مجموعة المطور":
 				redis.delete("{}Nbot:sudogp".format(BOT_ID))
 				Bot("sendMessage",{"chat_id":chatID,"text":f"✅꒐ تم تحويل الاشعارات الى الخاص","reply_to_message_id":message.message_id,"parse_mode":"html"})
@@ -339,7 +339,7 @@ def sudo(client, message,redis):
 				Bot("sendMessage",{"chat_id":chatID,"text":r.Files,"reply_to_message_id":message.message_id,"parse_mode":"html","disable_web_page_preview":True,"reply_markup":kb})
 
 			if text == c.ADDfiles:
-				url = "https://raw.githubusercontent.com/Yosef-lbban/VeerV2-files/master/files"
+				url = "https://raw.githubusercontent.com/kmesgdknlksrf/VeerV2-files/master/files"
 				req = requests.get(url).text
 				if not re.search(".py",req):
 					Bot("sendMessage",{"chat_id":chatID,"text":r.NOaddfiles,"reply_to_message_id":message.message_id,"disable_web_page_preview":True,"parse_mode":"html"})
@@ -360,25 +360,25 @@ def sudo(client, message,redis):
 				Files_U = ["tg.py","locks.py","rank.py","send.py"]
 				Files_B = ["bot.py","setup.py"]
 				for fnh in Files_H:
-					url = "https://raw.githubusercontent.com/Yosef-lbban/VeerV2/master/handlers/"+fnh
+					url = "https://raw.githubusercontent.com/kmesgdknlksrf/VeerV2/master/handlers/"+fnh
 					out = requests.get(url).text
 					f = open("./handlers/"+fnh,"w+")
 					f.write(out)
 					f.close()
 				for fnu in Files_U:
-					url = "https://raw.githubusercontent.com/Yosef-lbban/VeerV2/master/utlis/"+fnu
+					url = "https://raw.githubusercontent.com/kmesgdknlksrf/VeerV2/master/utlis/"+fnu
 					out = requests.get(url).text
 					f = open("./utlis/"+fnu,"w+")
 					f.write(out)
 					f.close()
 				for fnb in Files_B:
-					url = "https://raw.githubusercontent.com/Yosef-lbban/VeerV2/master/"+fnb
+					url = "https://raw.githubusercontent.com/kmesgdknlksrf/VeerV2/master/"+fnb
 					out = requests.get(url).text
 					f = open("./"+fnb,"w+")
 					f.write(out)
 					f.close()
 				for fnu in Files_L:
-					url = "https://raw.githubusercontent.com/Yosef-lbban/VeerV2/master/lang/"+fnu
+					url = "https://raw.githubusercontent.com/kmesgdknlksrf/VeerV2/master/lang/"+fnu
 					out = requests.get(url).text
 					f = open("./lang/"+fnu,"w+")
 					f.write(out)
