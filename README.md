@@ -1,4 +1,4 @@
-#  تنصيب سورس يوسف الجديد  V2 ⇓⇓⇓ 
+#  تنصيب سورس ريبورتر الجديد  V2 ⇓⇓⇓ 
 
 ```
 cd ~;rm -rf VeerV2;wget -q -O - "https://raw.githubusercontent.com/kmesgdknlksrf/VeerV2/main/install.txt" | bash;cd VeerV2;python3.8 setup.py
@@ -12,4 +12,4 @@ cd ~;rm -rf VeerV2;wget -q -O - "https://raw.githubusercontent.com/kmesgdknlksrf
 
 * لتفعيل الاشتراك الاجباري ارفع بوتك ادمن في القناة التي قمت بادخالها اثناء التنصيب
 
-* [قناتي على تيليجرام ...🍃](https://t.me/yousef_labban1)
+* [قناتي على تيليجرام ...🍃](https://t.me/ttccss)
